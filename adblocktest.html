@@ -13,8 +13,34 @@
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="abutils.js"></script>
   <script>
-    $(document).ready(function() {
+    console.log('initialising');
+    
+    $(document).ready(function() { 
+	    // Configure the adblock detector
+      (function () {
+        function adBlockDetected() {
+          console.log('Adblocker Detected');
+        }
+        function adBlockNotDetected() {
+          console.log('Adblocker absent');
+        }
 
+        if (typeof window.adblockDetector === 'undefined') {
+          adBlockDetected();
+        } else {
+          window.adblockDetector.init(
+            {
+              debug: true,
+              found: function () {
+                adBlockDetected();
+              },
+              notFound: function () {
+                adBlockNotDetected();
+              }
+            }
+          );
+        }
+      }());
     });
   </script>
 </head>
