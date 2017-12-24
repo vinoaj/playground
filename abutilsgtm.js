@@ -63,7 +63,7 @@
 (function(win) {
 
 	var ENABLE_GOOGLE_TAG_MANAGER = true;
-	//var GA_TRACKING_ID = ''; // sample for http://adblockdetector.emination.com/
+	var DATA_LAYER_NAME = 'dataLayer'; //Change this if you use a non-default name for the data layer
 	var googleTagManager = {}; // later initialized
 
 	// Credit to Easylist https://easylist.adblockplus.org/en/
@@ -703,7 +703,7 @@
 				return;
 			}
 
-			dataLayer.push({
+			this[DATA_LAYER_NAME].push({
 				'event': 'adblockDetection',
 				'adblockValues': {
 					'found': found,
