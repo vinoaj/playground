@@ -703,7 +703,8 @@
 				return;
 			}
 
-			this[DATA_LAYER_NAME].push({
+			console.log('ready to log GTM event');
+			this.window[DATA_LAYER_NAME].push({
 				'event': 'adblockDetection',
 				'adblockValues': {
 					'found': found,
