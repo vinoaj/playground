@@ -52,17 +52,24 @@
             }
         }
 
+        function assessState() {
+            console.log("assessState => document.readyState: ", document.readyState);
+
+            switch (document.readyState) {
+                case 'loading':
+                    // document.addEventListener('DOMContentLoaded', checkGTMLoad);
+                    document.addEventListener('onreadystatechange', assessState)
+                    break;
+                case 'interactive':
+                case 'complete':
+                    checkGTMLoad();
+                    break;
+            }
+        }
+
+        assessState();
         console.log("document.readyState: ", document.readyState);
 
-        switch (document.readyState) {
-            case 'loading':
-                document.addEventListener('DOMContentLoaded', checkGTMLoad);
-                break;
-            case 'interactive':
-            case 'complete':
-                checkGTMLoad();
-                break;
-        }
     </script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
