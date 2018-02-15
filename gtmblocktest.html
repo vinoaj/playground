@@ -27,7 +27,7 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function(event) {
-        console.log(window['google_tag_manager']);
+        console.log("1: ", window['google_tag_manager']);
         if (!window['google_tag_manager']) {
             console.log('GTM did not load');
             payload = {
@@ -36,8 +36,8 @@
             }
 
             httpRequest = new XMLHttpRequest();
-            httpRequest.setRequestHeader('Content-Type', 'application/json');
             httpRequest.open('POST', 'https://us-central1-phrasal-charger-185822.cloudfunctions.net/relayMPHit');
+            httpRequest.setRequestHeader('Content-Type', 'application/json');
             httpReqest.send(payload);
         } else {
             console.log("DOM fully loaded and parsed");
