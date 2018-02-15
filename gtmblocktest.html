@@ -58,10 +58,12 @@
             switch (document.readyState) {
                 case 'loading':
                     // document.addEventListener('DOMContentLoaded', checkGTMLoad);
+                    console.log("adding event listener");
                     document.addEventListener('onreadystatechange', assessState);
                     break;
                 case 'interactive':
                 case 'complete':
+                    console.log("firing GTM load");
                     checkGTMLoad();
                     break;
             }
