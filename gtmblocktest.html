@@ -48,7 +48,7 @@
                 httpRequest.setRequestHeader('Content-Type', 'application/json');
                 httpRequest.send(JSON.stringify(payload));
             } else {
-                console.log("DOM fully loaded and parsed");
+                console.log("GTM Loaded");
             }
         }
 
@@ -61,7 +61,7 @@
                     console.log("adding event listener");
                     document.onreadystatechange = assessState;
                     break;
-                case 'interactive':
+                // case 'interactive':
                 case 'complete':
                     console.log("firing check GTM load");
                     checkGTMLoad();
