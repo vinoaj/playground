@@ -34,7 +34,6 @@
     <!-- End Google Tag Manager -->
     <script>
         function checkGTMLoad() {
-            console.log("1: ", window['google_tag_manager']);
             if (!window['google_tag_manager']) {
                 console.log('GTM did not load');
                 payload = {
@@ -48,30 +47,23 @@
                 httpRequest.setRequestHeader('Content-Type', 'application/json');
                 httpRequest.send(JSON.stringify(payload));
             } else {
-                console.log("GTM Loaded");
+                console.log('GTM Loaded');
             }
         }
 
         function assessState() {
-            console.log("assessState => document.readyState: ", document.readyState);
-
             switch (document.readyState) {
                 case 'loading':
-                    // document.addEventListener('DOMContentLoaded', checkGTMLoad);
-                    console.log("adding event listener");
                     document.onreadystatechange = assessState;
                     break;
                 // case 'interactive':
                 case 'complete':
-                    console.log("firing check GTM load");
                     checkGTMLoad();
                     break;
             }
         }
 
         assessState();
-        console.log("document.readyState: ", document.readyState);
-
     </script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
