@@ -51,7 +51,7 @@
   </script>
   <!-- End Google Tag Manager -->
   <script>
-    var productReviews = dataLayer.productReviews;
+    var productReviews = dataLayer[0].productReviews;
     for (i = 0, l = productReviews.length; i < l; i++){
       var r = productReviews[i];
       console.log("Not GTM: ", r.name);
