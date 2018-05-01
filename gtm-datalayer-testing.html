@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>GTM dataLayer Testing</title>
+
+  <!-- <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" href="images/favicon.png"> -->
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+    var dataLayer = [({
+      "productReviews": [{
+        "name": "Donna S. - Stockton, CA",
+        "datePublished": "2016-01-01",
+        "ratingValue": "5",
+        "reviewBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      }, {
+        "name": "Sharon N. - Belfast, UK",
+        "datePublished": "2016-02-01",
+        "ratingValue": "5",
+        "reviewBody": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+      }, {
+        "name": "Elizabeth M. - Richmond, VA",
+        "datePublished": "2016-03-01",
+        "ratingValue": "5",
+        "reviewBody": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos."
+      }],
+    })]
+  </script>
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PSSNQMX');
+  </script>
+  <!-- End Google Tag Manager -->
+
+</head>
+
+<body>
+  <h1>GTM dataLayer Testing</h1>
+</body>
+
+</html>
