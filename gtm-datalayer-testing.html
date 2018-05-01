@@ -50,6 +50,13 @@
     })(window, document, 'script', 'dataLayer', 'GTM-PSSNQMX');
   </script>
   <!-- End Google Tag Manager -->
+  <script>
+    var productReviews = dataLayer.productReviews;
+    for (i = 0, l = productReviews.length; i < l; i++){
+      var r = productReviews[i];
+      console.log("Not GTM: " r.name);
+    }
+  </script>
 
 </head>
 
